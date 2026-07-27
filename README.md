@@ -1,50 +1,50 @@
-# Welcome to your Expo app 👋
+ Chat&Go 💬
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Application mobile de commerce conversationnel qui simplifie la recherche de services locaux. Grâce à une interface familière de messagerie et un agent IA intégré, l'utilisateur exprime son besoin en langage naturel et est instantanément mis en relation avec le bon prestataire via un bouton d'appel ou une redirection WhatsApp.
 
-## Get started
+Fonctionnalités
 
-1. Install dependencies
+- Authentification réelle (création de compte / connexion) avec Firebase Auth
+- Parcours d'onboarding en 3 écrans
+- Interface de chat façon WhatsApp
+- Agent IA (DeepSeek) qui analyse la demande de l'utilisateur en langage naturel
+- Détection automatique du type de service recherché : restauration, dépannage, ou transport
+- Affichage progressif des prestataires correspondants (nom, note, localisation, distance)
+- Mise en relation directe via appel téléphonique ou WhatsApp
+- Fiche prestataire détaillée
+- Inscription des prestataires eux-mêmes dans la base de données
+- Navigation par onglets (Chats / Historique / Profil)
 
-   ```bash
-   npm install
-   ```
+ Stack technique
 
-2. Start the app
+- **React Native** + **Expo** (Expo Router)
+- **DeepSeek API** pour l'agent IA
+- **Firebase Firestore** pour la base de données des prestataires
+- **Firebase Authentication** pour la gestion des comptes
+- **TypeScript**
 
-   ```bash
-   npx expo start
-   ```
+Installation
 
-In the output, you'll find options to open the app in a
+bash
+npm install
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Créer un fichier \`.env\` à la racine avec :
 
-## Get a fresh project
+EXPO_PUBLIC_API_KEY=votre_cle_api_deepseek
 
-When you're ready, run:
 
-```bash
-npm run reset-project
-```
+Créer un fichier \`firebaseConfig.js\` à la racine avec votre configuration Firebase.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Lancer le projet :
+bash
+npx expo start
 
-## Learn more
 
-To learn more about developing your project with Expo, look at the following resources:
+Architecture
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+L'application suit un flux simple : l'utilisateur s'authentifie, décrit son besoin dans le chat, l'agent IA (DeepSeek) analyse le message et détermine la catégorie de service recherché, puis l'application interroge Firestore pour trouver les prestataires correspondants et les affiche progressivement dans la conversation.
 
-## Join the community
+ Auteur
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Kibekoun Michaela
